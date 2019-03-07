@@ -15,6 +15,7 @@ function initialize() {
 	getTarget();
 	get4Jewels();
 	userNumber = 0;
+	display();
 }
 
 //Random # generator
@@ -62,8 +63,6 @@ function get4Jewels() {
 	}
 }
 
-initialize();
-
 function display() {
 	$("#targetNumber").text(targetNumber);
 	$("#userNumber").text(userNumber);
@@ -72,36 +71,36 @@ function display() {
 
 function test() {
 	if (userNumber > targetNumber) {
+		display();
 		alert("You lose.");
 		losses++;
 		initialize();
 	} else if (userNumber === targetNumber) {
+		display();
 		alert("You win!");
 		wins++;
 		initialize();
 	} else {
+		display();
 	}
 }
 
 $(document).ready(function() {
+	initialize();
 	$("#img1").click(function() {
 		userNumber += jewels[0];
-		display();
+		test();
 	});
 	$("#img2").click(function() {
 		userNumber += jewels[1];
-		display();
+		test();
 	});
 	$("#img3").click(function() {
 		userNumber += jewels[2];
-		display();
+		test();
 	});
 	$("#img4").click(function() {
 		userNumber += jewels[3];
-		display();
+		test();
 	});
 });
-
-// initialize();
-targetNumber = getTarget();
-get4Jewels();
