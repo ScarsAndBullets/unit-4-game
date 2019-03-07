@@ -12,8 +12,8 @@ var wins = 0;
 var losses = 0;
 
 function initialize() {
-	targetNumber = 0;
-	jewels = [];
+	getTarget();
+	get4Jewels();
 	userNumber = 0;
 }
 
@@ -30,9 +30,8 @@ function getRand(x, y) {
 function getTarget() {
 	var x = 121 - 19;
 	var y = 19;
-	var rand = getRand(x, y);
-	console.log("Target " + rand);
-	return rand;
+	targetNumber = getRand(x, y);
+	console.log("targetNumber " + targetNumber);
 }
 
 //generates a random number between 1-12
@@ -64,27 +63,45 @@ function get4Jewels() {
 }
 
 initialize();
-targetNumber = getTarget();
-get4Jewels();
 
-$("#targetNumber").text(targetNumber);
-$("#userNumber").text(userNumber);
+function display() {
+	$("#targetNumber").text(targetNumber);
+	$("#userNumber").text(userNumber);
+	console.log("Target: " + targetNumber + "  User: " + userNumber);
+}
+
+function test() {
+	if (userNumber > targetNumber) {
+		alert("You lose.");
+		losses++;
+		initialize();
+	} else if (userNumber === targetNumber) {
+		alert("You win!");
+		wins++;
+		initialize();
+	} else {
+	}
+}
 
 $(document).ready(function() {
 	$("#img1").click(function() {
 		userNumber += jewels[0];
-		alert(userNumber);
+		display();
 	});
 	$("#img2").click(function() {
 		userNumber += jewels[1];
-		alert(userNumber);
+		display();
 	});
 	$("#img3").click(function() {
 		userNumber += jewels[2];
-		alert(userNumber);
+		display();
 	});
 	$("#img4").click(function() {
 		userNumber += jewels[3];
-		alert(userNumber);
+		display();
 	});
 });
+
+// initialize();
+targetNumber = getTarget();
+get4Jewels();
