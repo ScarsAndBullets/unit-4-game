@@ -19,6 +19,7 @@
 			crossorigin="anonymous"
 		/>
 
+		<!-- External style sheet -->
 		<link rel="stylesheet" href="assets/css/style.css" />
 
 		<title>Cavern Escape</title>
@@ -39,7 +40,7 @@
 
 		<div class="container">
 			<div class="row">
-				<h4>A Lost Shepard</h4>
+				<!-- <h4>A Lost Shepard</h4>
 				<p>
 					Lost for days in the caverns of the Dewagal Valley, the only
 					thing in shorter supply than food and water is hope.
@@ -105,7 +106,7 @@
 					words inscribed in the thin air of the cavern in front of
 					you and the glowing gems, set into the surface of the alter
 					and faceted into the shapes of mystical beasts.
-				</p>
+				</p> -->
 				<h4>The Rules of the Game</h4>
 				<p>The admonition is clear:</p>
 				<p>
@@ -121,12 +122,44 @@
 				</p>
 			</div>
 			<div class="row">
+				<div class="col-4">
 					<!-- random number -->
+					<div class="card mb-2">
+						<h3 class="card-header">
+							Target Number
+						</h3>
+						<div class="card-body text-center">
+							<h1 id="targetNumber">???</h1>
+						</div>
+					</div>
 				</div>
+
 				<div class="col-4">
 					<!-- wins/losses -->
+					<div class="card mb-2">
+						<h3 class="card-header">
+							Your Total
+						</h3>
+						<div class="card-body text-center">
+							<h1 id="userNumber">???</h1>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-4">
+					<!-- random number -->
+					<div class="card mb-2">
+						<h3 class="card-header">
+							Games Won/Lost
+						</h3>
+						<div class="card-body text-center">
+							<h1 id="wins">Wins:</h1>
+							<h1 id="losses">Losses:</h1>
+						</div>
+					</div>
 				</div>
 			</div>
+
 			<div class="row">
 				<div class="col-3">
 					<img
@@ -140,7 +173,7 @@
 					<img
 						class="img-fluid"
 						id="img2"
-						src="assets/images/Life.png"
+						src="assets/images/Life.jpg"
 						alt=""
 					/>
 				</div>
@@ -165,9 +198,6 @@
 			<!-- Container   -->
 		</div>
 
-		<!-- Optional JavaScript -->
-		<script type="text/javascript" src="assets/javascript/game.js"></script>
-
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script
 			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -184,5 +214,7 @@
 			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 			crossorigin="anonymous"
 		></script>
+		<!-- External JavaScript -->
+		<script type="text/javascript" src="assets/javascript/game.js"></script>
 	</body>
 </html>
