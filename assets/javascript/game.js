@@ -66,20 +66,27 @@ function get4Jewels() {
 function display() {
 	$("#targetNumber").text(targetNumber);
 	$("#userNumber").text(userNumber);
+	$("#wins").text(`Wins: ${wins}`);
+	$("#losses").text(`Losses: ${losses}`);
+
 	console.log("Target: " + targetNumber + "  User: " + userNumber);
 }
 
 function test() {
 	if (userNumber > targetNumber) {
 		display();
-		alert("You lose.");
 		losses++;
-		initialize();
+		setTimeout(function() {
+			alert("You lose.");
+			initialize();
+		}, 100);
 	} else if (userNumber === targetNumber) {
 		display();
-		alert("You win!");
 		wins++;
-		initialize();
+		setTimeout(function() {
+			alert("You win!");
+			initialize();
+		}, 100);
 	} else {
 		display();
 	}
